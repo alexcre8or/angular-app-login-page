@@ -1,0 +1,81 @@
+@import "layout";
+@import "icons";
+
+
+
+input.ng-invalid-email,
+input.ng-invalid-pattern,
+input.ng-invalid.ng-dirty {
+  background: rgba(255, 57, 57, .05);
+}
+
+@media (max-width: 768px) {
+
+  .section-header {
+    height: auto;
+
+    h1 {
+      display: block;
+      margin-bottom: .5em;
+    }
+
+    .dates {
+      margin-bottom: 1em;
+    }
+  }
+
+  table {
+    display: block;
+    font-size: .9em;
+    overflow-x: auto;
+  }
+
+  .secondary-header {
+    height: auto;
+  }
+
+  .tabs-item {
+    display: inline-block;
+    padding: .5em;
+  }
+
+  .tabs-item:first-of-type {
+    padding: .5em;
+  }
+
+  .tabs-link.is-active {
+    border-bottom: none;
+    color: $grey-darkest;
+    font-weight: 800;
+  }
+}
+
+.is-loading {
+
+  &:after {
+    background: rgba(0, 0, 0, 0.4);
+    bottom: -4px;
+    box-sizing: border-box;
+    content: '';
+    display: block;
+    height: 4px;
+    left: 50%;
+    margin-left: -50%;
+    position: absolute;
+    width: 40%;
+
+    animation: btn-is-loading .75s;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes btn-is-loading {
+  from {
+    margin-left: 0;
+    width: 0;
+  }
+  to {
+    margin-left: -50%;
+    width: 100%;
+  }
+}

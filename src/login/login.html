@@ -1,0 +1,41 @@
+<section class="l-container">
+
+  <form class="login-form col-12" name="loginForm" ng-submit="login()" novalidate>
+
+    <div class="l-text-center login-form-logo"></div>
+
+    <header class="section-header l-text-center login-form-header">
+      <h1>Пожалуйста, авторизуйтесь</h1>
+    </header>
+
+    <div class="row">
+
+      <div class="col-4 l-center">
+
+        <div class="form-group" ng-class="{ 'is-error' : hasError(loginForm.email) }">
+          <label>E-mail:</label>
+          <input name="email" type="email" ng-model="email" class="l-full-width" required autofocus/>
+        </div>
+
+        <div class="form-group" ng-class="{ 'is-error' : hasError(loginForm.password) }">
+          <label>Пароль:</label>
+          <input name="password" type="password" ng-model="password" ng-minlength="3"
+                 class="l-full-width" required/>
+        </div>
+
+        <div class="l-text-center login-form-actions">
+          <button type="submit" class="btn" ng-disabled="loginForm.$invalid">
+            Войти <i class="fa fa-lg fa-sign-in"></i>
+          </button>
+        </div>
+
+        <div class="form-group l-text-center l-clear">
+          <a href="#/register" class="l-muted-link l-left">Регистрация</a>
+          <a href="#/recover" class="l-muted-link l-right">Забыли пароль?</a>
+        </div>
+
+      </div>
+    </div>
+  </form>
+
+</section>

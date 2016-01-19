@@ -1,0 +1,54 @@
+<section class="l-container">
+
+  <form class="login-form col-12" name="registrationForm" ng-submit="register()" novalidate>
+
+    <div class="l-text-center login-form-logo"></div>
+
+    <header class="section-header l-text-center login-form-header">
+      <h1>Регистрация</h1>
+    </header>
+
+    <div class="row">
+
+      <div class="col-4 l-center">
+        <div ng-if="error.show" class="alert alert-danger">{{error.message}}</div>
+
+        <div class="form-group" ng-class="{ 'has-error' : hasError(registrationForm.email) }">
+          <label>E-mail:</label>
+          <input name="email" type="email" ng-model="email" class="l-full-width" required autofocus autocomplete="off"/>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-error' : hasError(registrationForm.password) }">
+          <label>Пароль:</label>
+          <input name="password" type="password" ng-model="password" ng-minlength="3" class="l-full-width" required/>
+        </div>
+
+        <div class="form-group">
+          <label>Проверочный код:</label>
+
+          <div class="l-text-center captcha l-clear">
+            <img width="45" height="30" ng-src="{{ captcha.data_url }}" alt=""/>
+
+            <input name="captchaResponse" type="text" ng-model="captcha.answer" ng-minlength="3" size="4" required maxlength="128"/>
+          </div>
+        </div>
+
+        <div class="form-group l-text-center">
+          <p>Регистрируясь в сервисе, Вы принимаете <a href="#" target="_blank">лицензионное соглашение</a></p>
+        </div>
+
+        <div class="l-text-center login-form-actions">
+          <button type="submit" class="btn" ng-disabled="registrationForm.$invalid">
+            Зарегистрироваться <i class="fa fa-lg fa-user"></i>
+          </button>
+        </div>
+
+        <div class="form-group l-text-center">
+          <a href="#/login" class="l-muted-link l-left">Вход</a>
+          <a href="#/recover" class="l-muted-link l-right">Забыли пароль?</a>
+        </div>
+      </div>
+    </div>
+  </form>
+
+</section>

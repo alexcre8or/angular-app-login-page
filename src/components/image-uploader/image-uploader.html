@@ -1,0 +1,12 @@
+<div alexeyApp-loader="uploader.isUploading" class="image-uploader image-uploader-{{ mode }}">
+  <div class="thumbnail-large">
+    <img ng-src="{{cover}}" ng-show="cover" alt=""/>
+  </div>
+  <input class="image-uploader-file" id="cover-upload" type="file" name="fileUpload" nv-file-select uploader="uploader"/>
+
+  <div class="image-uploader-toolbar l-text-right">
+    <button type="button" ng-disabled="uploader.isUploading" ng-click="openDialog($event)" class="btn btn-flat btn-toolbar">
+      <i class="fa fa-lg fa-cloud-upload"></i>
+    </button>
+  </div>
+</div>

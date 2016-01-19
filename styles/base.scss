@@ -1,0 +1,171 @@
+@import 'variables';
+
+//----------------------------------------------------------------------------------------------------------------------
+// Page
+//----------------------------------------------------------------------------------------------------------------------
+
+*:focus {
+  outline: none;
+}
+
+html, body {
+  font-family: $font-family;
+  font-size: $font-size-base;
+  height: 100%;
+  min-width: 320px;
+}
+
+body {
+  background: $body-bg-color;
+  color: $grey-darkest;
+  line-height: 1em;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+body {
+  -webkit-animation: bugfix infinite 1s;
+}
+
+@-webkit-keyframes bugfix {
+  from {
+    padding: 0;
+  }
+  to {
+    padding: 0;
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+// Links
+//----------------------------------------------------------------------------------------------------------------------
+
+a {
+  color: $link-color;
+  font-weight: $font-weight-base;
+  text-decoration: underline;
+  transition: color .25s ease, background .25s ease;
+
+  &:hover,
+  &:focus {
+    color: $active-link-color;
+    text-decoration: none;
+    transition: color .25s ease, background .25s ease;
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+// Headers
+//----------------------------------------------------------------------------------------------------------------------
+
+h1, h2, h3 {
+  font-weight: $font-weight-base;
+  line-height: 1em;
+  margin: 0;
+}
+
+h3 {
+  font-size: $font-size-label;
+  font-weight: $font-weight-base;
+}
+
+p {
+  font-size: (14px/$font-size-base)+em;
+  font-weight: $font-weight-base;
+  line-height: 1.25em;
+}
+
+span {
+  font-weight: $font-weight-base;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+// Forms
+//----------------------------------------------------------------------------------------------------------------------
+
+label {
+  display: block;
+  font-size: $font-size-label;
+  font-weight: $font-weight-base;
+  line-height: 1em;
+  margin: .5em 0;
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="search"],
+input[type="password"],
+input[type="email"] {
+  background: $grey-lighter;
+  border: 1px solid $grey-light;
+  border-radius: $border-radius;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0) /*, inset 0 1px 2px rgba(0, 0, 0, .25)*/;
+  box-sizing: border-box;
+  color: $color-input-text;
+  font-size: 1em;
+  font-weight: $font-weight-base;
+  height: $input-height;
+  margin: 0 0 1em;
+  outline: none;
+  padding: 0 1em;
+}
+
+input[type="text"],
+input[type="search"],
+input[type="password"],
+input[type="email"] {
+  &:focus {
+    box-shadow: 0 2px 0 $color-brand /*, inset 0 1px 2px rgba(0, 0, 0, .25)*/;
+    transition: box-shadow .25s linear;
+  }
+
+  &.is-error {
+    box-shadow: 0 2px 0 $color-attention;
+    transition: box-shadow .25s linear;
+  }
+}
+
+a[disabled="disabled"],
+button[disabled="disabled"],
+input[type="submit"][disabled="disabled"] {
+  opacity: .5;
+  pointer-events: none;
+}
+
+*[disabled=disabled] {
+  pointer-events: none;
+}
+
+textarea {
+  line-height: 1.2em;
+  min-height: 10em;
+  padding: .5em 1.5em;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+// Tables
+//----------------------------------------------------------------------------------------------------------------------
+
+table {
+  width: 100%;
+}
+
+th {
+  font-size: 1.2em;
+  text-align: left;
+}
+
+th,
+td {
+  font-weight: $font-weight-base;
+  padding: 1em;
+}
+
+tr {
+  &.underlined {
+    border-bottom: 1px solid $grey-light;
+    padding: 10px;
+  }
+}
+

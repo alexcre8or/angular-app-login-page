@@ -1,0 +1,501 @@
+@import "base";
+
+//----------------------------------------------------------------------------------------------------------------------
+// Grid
+//----------------------------------------------------------------------------------------------------------------------
+
+[class*='col-'] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  margin: 0;
+  padding: 0 $gutter-width;
+  position: relative;
+
+}
+
+.row {
+  &:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    clear: both;
+    content: '';
+    display: table;
+  }
+
+  .row {
+    margin-left: -$gutter-width;
+    margin-right: -$gutter-width;
+  }
+}
+
+@mixin col($cols) {
+  width: ($cols/12) * 100%;
+}
+
+.col-1 {
+  @include col(1);
+}
+
+.col-2 {
+  @include col(2);
+}
+
+.col-3 {
+  @include col(3);
+}
+
+.col-4 {
+  @include col(4);
+}
+
+.col-5 {
+  @include col(5);
+}
+
+.col-6 {
+  @include col(6);
+}
+
+.col-7 {
+  @include col(7);
+}
+
+.col-8 {
+  @include col(8);
+}
+
+.col-9 {
+  @include col(9);
+}
+
+.col-10 {
+  @include col(10);
+}
+
+.col-11 {
+  @include col(11);
+}
+
+.col-12 {
+  @include col(12);
+}
+
+@media (min-width: 768px) and (max-width: 960px) {
+  .col-2,
+  .col-7 {
+    @include col(6);
+  }
+
+  .col-4,
+  .col-5,
+  .col-6 {
+    @include col(6);
+  }
+
+  .col-7,
+  .col-8,
+  .col-9,
+  .col-10,
+  .col-11,
+  .col-12 {
+    @include col(12);
+  }
+}
+
+@media (max-width: 767px) {
+
+  .col-4,
+  .col-7,
+  .col-9,
+  .col-10,
+  .col-11,
+  .col-12 {
+    @include col(12);
+  }
+
+  .col-1,
+  .col-2,
+  .col-3,
+  .col-5,
+  .col-8 {
+    @include col(6);
+  }
+}
+
+@media (max-width: 540px) {
+  .col-1,
+  .col-2,
+  .col-3,
+  .col-4,
+  .col-5,
+  .col-6,
+  .col-7,
+  .col-8,
+  .col-9,
+  .col-10,
+  .col-11,
+  .col-12 {
+    @include col(12);
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+// Helpers
+//----------------------------------------------------------------------------------------------------------------------
+
+.l-container {
+  margin: 0 auto;
+  max-width: $max-page-width;
+  padding: 0 $standard-padding;
+}
+
+.l-text-left {
+  text-align: left;
+}
+
+.l-text-center {
+  text-align: center;
+}
+
+.l-text-right {
+  text-align: right;
+}
+
+.l-center {
+  float: none;
+  margin: 0 auto;
+}
+
+.l-left {
+  float: left;
+}
+
+.l-right {
+  float: right;
+}
+
+.l-inline-block {
+  display: inline-block;
+}
+
+.l-full-width {
+  width: 100%;
+}
+
+.list-row {
+  border-bottom: 1px solid $grey-light;
+  padding: 3em 0 2em;
+}
+
+.l-list-row {
+  border-bottom: 1px solid $grey-light;
+  padding: 1em 0 1em;
+}
+
+.l-muted-text {
+  color: $color-input-text;
+  font-size: small;
+}
+
+.l-muted-link {
+  color: $color-input-text;
+  font-size: (16px/$font-size-base)+em;
+  text-decoration: underline;
+}
+
+.l-caption {
+  display: block;
+  font-size: $font-size-label;
+  font-weight: $font-weight-base;
+  line-height: 1em;
+  margin: 1em 0;
+}
+
+.l-caption-inline {
+  display: inline;
+  font-size: 1em;
+  line-height: 2em;
+}
+
+.l-input-inline {
+  max-width: (110px/$font-size-base)+em;
+}
+
+.l-branded-text {
+  color: $color-brand;
+}
+
+.l-notice-text {
+  color: $color-notice;
+}
+
+.l-warning-text {
+  color: $color-negative;
+}
+
+.l-active-text {
+  color: $active-link-color;
+}
+
+.l-odd {
+  background: #f0fbfb;
+}
+
+.l-table-row {
+  color: $grey-darker;
+  font-size: (18px/$font-size-base)+em;
+  font-weight: $font-weight-base;
+  line-height: 1em;
+  padding: 1em 0;
+}
+
+.l-clear {
+  clear: both;
+
+  &:after,
+  &:before {
+    clear: both;
+    content: '';
+    display: table;
+    height: 0;
+  }
+}
+
+.l-info-text {
+  background: $grey-light;
+  border: 1px dashed $grey-dark;
+  font-size: 1em;
+  padding: $gutter-width;
+}
+
+.l-bold {
+  font-weight: 800;
+}
+
+.l-badge {
+  background: $color-brand;
+  border-radius: 1em;
+  color: $btn-text-color;
+  display: inline-block;
+  height: 1em;
+  line-height: 1em;
+  padding: .5em;
+}
+.l-margin-top-label {
+  margin-top: 26px;
+}
+//----------------------------------------------------------------------------------------------------------------------
+// Images
+//----------------------------------------------------------------------------------------------------------------------
+
+[class^=thumbnail] {
+  background: $grey-lighter image_url('default-image.svg') 50% 50% no-repeat;
+  background-size: 30%;
+  border: 1px solid $grey-light;
+  display: table-cell;
+  height: auto;
+  overflow: hidden;
+  vertical-align: middle;
+  width: 100%;
+
+  img {
+    display: block;
+    height: auto;
+    width: 100%;
+
+    &.is-scaled {
+      transform: scale(1.1);
+      transition: transform 1.5s ease;
+    }
+
+    &.is-normal {
+      transform: scale(1);
+      transition: transform .5s ease;
+    }
+  }
+}
+
+.thumbnail-small {
+  height: (110px/$font-size-base)+em;
+  width: (110px/$font-size-base)+em;
+}
+
+.thumbnail-large {
+  border: none;
+  display: block;
+  padding-bottom: 110%;
+  position: relative;
+  width: 100%;
+
+  img {
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.thumbnail-square {
+  //border: none;
+  display: block;
+  padding-bottom: 100%;
+  position: relative;
+  width: 100%;
+
+  img {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.thumbnail-circle {
+  border: none;
+  border-radius: 50%;
+  display: block;
+  padding-bottom: 100%;
+  position: relative;
+  width: 100%;
+
+  img {
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.cover-bg {
+  background-position: 50% 50%;
+  background-size: cover;
+  padding-bottom: 100%;
+  width: 100%;
+
+  &.is-scaled {
+    transform: scale(1.1);
+    transition: transform 1.5s ease;
+  }
+
+  &.is-normal {
+    transform: scale(1);
+    transition: transform .5s ease;
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+// Page regions
+//----------------------------------------------------------------------------------------------------------------------
+
+.page-header {
+  background: $nav-bg-color;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .4);
+  height: $header-height;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2000;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+.page-wrapper {
+  box-sizing: border-box;
+  min-height: 100%;
+  padding-top: $header-height;
+  position: relative;
+
+  &.is-loading {
+    overflow: hidden;
+    width: 100%;
+  }
+}
+
+.page-content {
+  opacity: 1;
+  padding-bottom: 120px;
+  position: relative;
+  transition: opacity .5s ease;
+
+  &:after {
+    clear: both;
+    content: '';
+    display: table;
+    height: 0;
+  }
+
+  &.is-loading {
+    opacity: 0;
+    transition: opacity .5s ease;
+  }
+}
+
+.page-footer {
+  background: $grey-normal;
+  bottom: 0;
+  color: $grey-darker;
+  left: 0;
+  padding: 2em 0;
+  position: absolute;
+  width: 100%;
+  a, span {
+    font-size: small;
+    margin-left: 10px;
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+// Forms
+//----------------------------------------------------------------------------------------------------------------------
+
+.form-row {
+  border-top: 1px solid $grey-light;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.input-row {
+  margin-bottom: (24px/$font-size-base)+em;
+}
+
+.field-description {
+  color: $grey-darker;
+  font-size: .8em;
+  margin: -.5em 0 1em;
+}
+
+.input-icon {
+  position: relative;
+
+  .fa {
+    color: $grey-dark;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+// Speed up scrolling
+//----------------------------------------------------------------------------------------------------------------------
+
+@media (min-width: 1280px) {
+  .disable-hover,
+  .disable-hover * {
+    pointer-events: none !important;
+  }
+}
+
+.shadow-box {
+  @include clear;
+  @include light-gradient;
+
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  //box-shadow: 0 2px 10px rgba(0, 0, 0, .15);
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
+  margin: 0 0 2*$gutter-width;
+  padding: 2*$gutter-width;
+
+  &.embedded {
+    margin: 0;
+    padding: 0;
+  }
+}

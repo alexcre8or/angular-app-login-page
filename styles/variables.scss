@@ -1,0 +1,107 @@
+//----------------------------------------------------------------------------------------------------------------------
+// Typography
+//----------------------------------------------------------------------------------------------------------------------
+
+$font-family: 'Open Sans', sans-serif;
+$font-size-base: 14px;
+$font-size-thumb: 11px;
+
+$font-weight-base: 400;
+
+$font-size-section-header: 2.57142857em;
+$font-size-header: 1.71428571em;
+$font-size-label: (16px/$font-size-base)+em;
+$font-size-input: 1em;
+$font-size-link: 1em;
+
+//----------------------------------------------------------------------------------------------------------------------
+// Layout
+//----------------------------------------------------------------------------------------------------------------------
+
+$max-page-width: 960px;
+$standard-padding: 1.42857143em;
+$header-height: 4.28571429em;
+$input-height: (32px/$font-size-base)+em;
+
+
+//----------------------------------------------------------------------------------------------------------------------
+// Grid
+//----------------------------------------------------------------------------------------------------------------------
+
+$gutter-width: 10px;
+
+//----------------------------------------------------------------------------------------------------------------------
+// Colors
+//----------------------------------------------------------------------------------------------------------------------
+
+$bg-color: #fff;
+$body-bg-color: #f0f0f0;
+$nav-bg-color: rgba(54, 62, 71, 0.95);
+
+$grey-lighter: #fafafa;
+$grey-light: #ececec;
+$grey-normal: #e9e9e9;
+$grey-dark: #bdbdbd;
+$grey-darker: #7b7b7b;
+$grey-darkest: #3b3b43;
+
+$color-dark: $grey-darker;
+$color-brand: #1fb5ad;
+$color-notice: #ffcb50;
+$color-attention: #ff3939;
+$color-negative: #ed393a;
+$color-alter: #f3fbfb;
+
+$color-menu-text: #92a1ac;
+$color-input-text: #3b3b43;
+
+$link-color: $color-brand;
+$active-color: #00a19a;
+$active-link-color: #00a19a;
+
+@mixin gradient($from, $to, $start : 0%, $end : 100%) {
+  background: $from;
+  background: -moz-linear-gradient(top, $from $start, $to $end);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop($start, $from), color-stop($end, $to));
+  background: -webkit-linear-gradient(top, $from $start, $to $end);
+  background: -o-linear-gradient(top, $from $start, $to $end);
+  background: -ms-linear-gradient(top, $from $start, $to $end);
+  background: linear-gradient(to bottom, $from $start, $to $end);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$from, endColorstr=$to, GradientType=0);
+}
+
+@mixin light-gradient {
+  @include gradient(#FDFDFD, #f7f7f7);
+}
+
+@mixin clear {
+  clear: both;
+
+  &:before,
+  &:after {
+    clear: both;
+    content: '';
+    display: table;
+    height: 0;
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+// Buttons
+//----------------------------------------------------------------------------------------------------------------------
+$button-bg-color-disabled: #DFDFDF !default;
+$button-color: $color-brand !default;
+$button-color-disabled: #9F9F9F !default;
+$button-color-flat: #343434 !default;
+$button-color-raised: #fff !default;
+$button-floating-size: 37px !default;
+$button-height: 36px !default;
+$button-font-size-shared: 1.3rem !default;
+$button-large-icon-font-size: 1.6rem !default;
+$button-line-height: 36px !default;
+
+$btn-text-color: #fff;
+$btn-font: $font-weight-base 16px/1em $font-family;
+$btn-padding: .8rem;
+$border-radius: 3px;
+$text-transform: 'uppercase';
